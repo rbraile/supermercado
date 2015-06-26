@@ -3,6 +3,7 @@ package tallerweb.supermercado.modelo;
 import java.util.LinkedList;
 import java.util.List;
 
+
 public class Carrito {
 
     private static Carrito instance = new Carrito();
@@ -29,7 +30,7 @@ public class Carrito {
      * @param ingrediente
      */
     public void agregarProducto(Producto producto) {
-        // Implementar
+		this.productos.add(producto);
     }
 
     /**
@@ -42,13 +43,12 @@ public class Carrito {
     }
 
     /**
-     * Lista todos los productos que forman parte del carrito.<br>
+     * Lista todos los productos que forman parte .del carrito.<br>
      * 
      * @return
      */
     public List<Producto> verProductos() {
-        // Implementar
-        return null;
+        return this.productos;
     }
 
     /**
@@ -58,8 +58,7 @@ public class Carrito {
      * @return
      */
     public Double total() {
-        // Implementar
-        return null;
+    	return 1.0;
     }
 
     /**
