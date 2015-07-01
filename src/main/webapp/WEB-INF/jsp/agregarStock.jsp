@@ -1,11 +1,6 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page import="tallerweb.supermercado.modelo.Carrito" %>
-<%@ page import="tallerweb.supermercado.modelo.Producto" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="tallerweb.supermercado.modelo.Carrito" %>
-<%@ page import="java.util.LinkedList" %>
+<%@ page import="java.util.Map" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
@@ -20,13 +15,35 @@
 	<div class="panel panel-default">
 		<div class="panel-header">
 		<ul class="nav nav-pills">
-		  <li role="presentation" class="active"><a href="#">Home</a></li>
+		  <li role="presentation" class="active"><a href="/">Home</a></li>
 		  <li role="presentation"><a href="agregarProducto">Agregar productos</a></li>
 		  <li role="presentation"><a href="stock">listar stock</a></li>
 		  <li role="presentation"><a href="agregarStock">Agregar stock</a></li>
 		</ul>
-		</div>
-	</div>
-</div>
+<h1>Formulario para ingreso de stock de productos</h1>
+
+<form:form action="/agregar-stock" method="POST" modelAttribute="Stock" commandName="stock">
+	<form:label path="nombre">
+		Ingrese nombre
+	</form:label>
+	<form:input path="nombre"></form:input>
+	<br />
+	
+	<form:label path="precio">
+		Ingrese precio
+	</form:label>
+	<form:input path="precio"></form:input>
+	<br />
+		
+	<button id="acceptButton" title="enviar" type="submit">
+		enviar datos
+	</button>
+</form:form>
+
+<form>
+	
+</form>
+
+
 </body>
 </html>
