@@ -23,7 +23,7 @@ public class Carrito {
 	public void vaciar() {
 		this.productos.clear();
 	}
-	
+
 	public void vaciarDescuentos() {
 		this.descuentos.clear();
 	}
@@ -54,7 +54,7 @@ public class Carrito {
 	public List<Producto> verProductos() {
 		return this.productos;
 	}
-	
+
 	public List<Descuento> verDescuentos() {
 		return this.descuentos;
 	}
@@ -77,11 +77,12 @@ public class Carrito {
 	public Double totalSinDescuentos() {
 		Double total = 0.00;
 
-		for (Iterator<Producto> it = this.verProductos().iterator(); it.hasNext();) {
+		for (Iterator<Producto> it = this.verProductos().iterator(); it
+				.hasNext();) {
 			Producto each = it.next();
 			total += each.getPrecio();
 		}
-		
+
 		return total;
 	}
 
@@ -94,14 +95,16 @@ public class Carrito {
 		Double totalPorcentaje = 0.00;
 		Double totalMonto = 0.00;
 		Double totalAPagar = this.totalSinDescuentos();
-		
+
 		for (Iterator<Descuento> it = this.descuentos.iterator(); it.hasNext();) {
 			Descuento each = it.next();
-			totalMonto += (each.getMonto() != null )? each.getMonto(): 0.00;
-			totalPorcentaje += (each.getPorcentaje() != null )? each.getPorcentaje(): 0.00;
+			totalMonto += (each.getMonto() != null) ? each.getMonto() : 0.00;
+			totalPorcentaje += (each.getPorcentaje() != null) ? each
+					.getPorcentaje() : 0.00;
 		}
 		totalAPagar -= totalMonto;
-		totalPorcentaje = (totalPorcentaje>0)? (totalAPagar * totalPorcentaje)/100 : 0.00;
+		totalPorcentaje = (totalPorcentaje > 0) ? (totalAPagar * totalPorcentaje) / 100
+				: 0.00;
 		return totalMonto + totalPorcentaje;
 	}
 }
