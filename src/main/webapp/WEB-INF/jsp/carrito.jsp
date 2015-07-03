@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="tallerweb.supermercado.modelo.Stock" %>
+<%@ page import="tallerweb.supermercado.modelo.Carrito" %>
 <%@ page import="java.util.LinkedList" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
@@ -16,26 +16,32 @@
 	<div class="panel panel-default">
 		<div class="panel-header">
 			<ul class="nav nav-pills">
- 				  <li role="presentation"><a href="/supermercado">Home</a></li>
+				  <li role="presentation"><a href="/supermercado">Home</a></li>
 				  <li role="presentation"><a href="agregarProducto">Agregar productos</a></li>
-				  <li role="presentation" class="active"><a href="stock">listar stock</a></li>
+				  <li role="presentation"><a href="stock">listar stock</a></li>
 				  <li role="presentation"><a href="agregarStock">Agregar stock</a></li>
-				  <li role="presentation"><a href="carrito">Carrito</a></li>
+				  <li role="presentation" class="active"><a href="carrito">Carrito</a></li>
 			</ul>
-			<h1>Listado de productos y su stock</h1>
-		</div>
-		</div>
-		<div class="panel-body">
-			<h2>Esta es la lista de nuestros productos</h2>
-			<table>
-				<c:forEach items="${stocks}" var="stock">
-				    <tr>
-				    	<td>${stock.key.nombre}</td>
-				    	<td>${stock.value}</td>
-			    	</tr>
-				</c:forEach>
-			</table>
+			<h1>Bienvenidos a "EL" supermercado</h1>
 		</div>
 	</div>
+	<div class="panel-body">
+		<h2>Esta es la lista de nuestros productos</h2>
+		<table>
+			<c:forEach items="${productos}" var="producto">
+			    <tr>
+			    	<td>${producto.nombre}</td>
+			    	<td> $ ${producto.precio}</td>
+					
+		    	</tr>
+			</c:forEach>
+		</table>
+		<div>
+			<a class="btn" href="/supermercado/cancelar">Cancelar</a>
+		</div>
+	</div>
+</div>
+
+
 </body>
 </html>

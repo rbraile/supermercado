@@ -102,6 +102,7 @@ public class Stock {
 		if(!this.stock.containsKey(producto)){
 			return false;
 		}
+
 		Integer nuevaCantidad = this.stock.get(producto) - unidades;
 		this.stock.put(producto, nuevaCantidad);
 		return true;
@@ -119,4 +120,5 @@ public class Stock {
 		this.stock.remove(producto);
 		return true;
 	}
+	
 }

@@ -16,17 +16,6 @@
 <title>Ejemplo SpringMVC</title>
 </head>
 <body>
-<div class="container">
-	<div class="panel panel-default">
-		<div class="panel-header">
-		<ul class="nav nav-pills">
-		  <li role="presentation" class="active"><a href="#">Home</a></li>
-		  <li role="presentation"><a href="agregarProducto">Agregar productos</a></li>
-		  <li role="presentation"><a href="stock">listar stock</a></li>
-		  <li role="presentation"><a href="agregarStock">Agregar stock</a></li>
-		</ul>
-		</div>
-	</div>
-</div>
+<jsp:forward page="/productos"></jsp:forward> 
 </body>
 </html>
