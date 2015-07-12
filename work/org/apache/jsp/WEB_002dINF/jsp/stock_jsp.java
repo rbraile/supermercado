@@ -76,10 +76,6 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<link href=\"");
       if (_jspx_meth_c_005furl_005f2(_jspx_page_context))
         return;
-      out.write("\" rel=\"stylesheet\"  type=\"text/css\" />    \n");
-      out.write("<link href=\"");
-      if (_jspx_meth_c_005furl_005f3(_jspx_page_context))
-        return;
       out.write("\" rel=\"stylesheet\"  type=\"text/css\" />\n");
       out.write("<title>Ejemplo SpringMVC</title>\n");
       out.write("</head>\n");
@@ -87,12 +83,15 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<div class=\"container\">\n");
       out.write("\t<div class=\"panel panel-default\">\n");
       out.write("\t\t<div class=\"panel-header\">\n");
-      out.write("\t\t<ul class=\"nav nav-pills\">\n");
-      out.write("\t\t  <li role=\"presentation\" class=\"active\"><a href=\"#\">Home</a></li>\n");
-      out.write("\t\t  <li role=\"presentation\"><a href=\"agregarProducto\">Agregar productos</a></li>\n");
-      out.write("\t\t  <li role=\"presentation\"><a href=\"stock\">Agregar stock</a></li>\n");
-      out.write("\t\t</ul>\n");
+      out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
+      out.write(" \t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\" class=\"active\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
+      out.write("\t\t\t</ul>\n");
       out.write("\t\t\t<h1>Listado de productos y su stock</h1>\n");
+      out.write("\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div class=\"panel-body\">\n");
       out.write("\t\t\t<h2>Esta es la lista de nuestros productos</h2>\n");
@@ -104,9 +103,6 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t</table>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
-      out.write("</div>\n");
-      out.write("\n");
-      out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -179,25 +175,6 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
     return false;
   }
 
-  private boolean _jspx_meth_c_005furl_005f3(PageContext _jspx_page_context)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:url
-    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
-    _jspx_th_c_005furl_005f3.setPageContext(_jspx_page_context);
-    _jspx_th_c_005furl_005f3.setParent(null);
-    // /WEB-INF/jsp/stock.jsp(11,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f3.setValue("/css/bootstrap-responsive.css");
-    int _jspx_eval_c_005furl_005f3 = _jspx_th_c_005furl_005f3.doStartTag();
-    if (_jspx_th_c_005furl_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);
-      return true;
-    }
-    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);
-    return false;
-  }
-
   private boolean _jspx_meth_c_005fforEach_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
@@ -206,9 +183,9 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/jsp/stock.jsp(28,4) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/stock.jsp(28,4) '${stocks}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${stocks}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/jsp/stock.jsp(28,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/stock.jsp(30,4) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/stock.jsp(30,4) '${stocks}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${stocks}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/stock.jsp(30,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("stock");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -218,10 +195,10 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
           out.write("\n");
           out.write("\t\t\t\t    <tr>\n");
           out.write("\t\t\t\t    \t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${stock.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${stock.key.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
           out.write("\t\t\t\t    \t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.cantidad}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${stock.value}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
           out.write("\t\t\t    \t</tr>\n");
           out.write("\t\t\t\t");

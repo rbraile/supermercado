@@ -7,7 +7,6 @@
 <script src="<c:url value="/js/jquery.js" />"></script>
 <script src="<c:url value="/js/bootstrap.js" />"></script>
 <link href="<c:url value="/css/bootstrap.css" />" rel="stylesheet"  type="text/css" />    
-<link href="<c:url value="/css/bootstrap-responsive.css" />" rel="stylesheet"  type="text/css" />
 <title>Agregar Producto</title>
 </head>
 <body>
@@ -16,10 +15,10 @@
 		<div class="panel-header">
 			<ul class="nav nav-pills">
 			  <li role="presentation"><a href="/supermercado">Home</a></li>
-			  <li role="presentation" class="active"><a href="agregarProducto">Agregar productos</a></li>
-			  <li role="presentation"><a href="stock">listar stock</a></li>
-			  <li role="presentation"><a href="agregarStock">Agregar stock</a></li>
-			  <li role="presentation"><a href="carrito">Carrito</a></li>
+			  <li role="presentation" class="active"><a href="/supermercado/agregarProducto">Agregar productos</a></li>
+			  <li role="presentation"><a href="/supermercado/stock">listar stock</a></li>
+			  <li role="presentation"><a href="/supermercado/agregarStock">Agregar stock</a></li>
+			  <li role="presentation"><a href="/supermercado/carrito">Carrito</a></li>
 			</ul>
 			<h1>Agregado de productos</h1>
 		</div>

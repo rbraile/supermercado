@@ -3,8 +3,6 @@ package org.apache.jsp.WEB_002dINF.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import tallerweb.supermercado.modelo.Carrito;
-import java.util.LinkedList;
 
 public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -15,6 +13,9 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody;
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -26,6 +27,9 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
   public void _jspInit() {
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
@@ -33,6 +37,9 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.release();
     _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.release();
+    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.release();
+    _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath.release();
+    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -49,7 +56,7 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=ISO-8859-1");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -81,29 +88,620 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_005furl_005f3(_jspx_page_context))
         return;
       out.write("\" rel=\"stylesheet\"  type=\"text/css\" />\n");
-      out.write("<title>Ejemplo SpringMVC</title>\n");
+      out.write("<title>Agregar Stock</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("<div class=\"container\">\n");
       out.write("\t<div class=\"panel panel-default\">\n");
       out.write("\t\t<div class=\"panel-header\">\n");
-      out.write("\t\t<ul class=\"nav nav-pills\">\n");
-      out.write("\t\t  <li role=\"presentation\" class=\"active\"><a href=\"#\">Home</a></li>\n");
-      out.write("\t\t  <li role=\"presentation\"><a href=\"agregarProducto\">Agregar productos</a></li>\n");
-      out.write("\t\t  <li role=\"presentation\"><a href=\"stock\">listar stock</a></li>\n");
-      out.write("\t\t  <li role=\"presentation\"><a href=\"agregarStock\">Agregar stock</a></li>\n");
-      out.write("\t\t</ul>\n");
+      out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
+      out.write("\t\t\t\t  <li role=\"presentation\" class=\"active\"><a href=\"/supermercado\">Home</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
+      out.write(" \t\t\t  \t  <li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
+      out.write("\t\t\t</ul>\n");
       out.write("\t\t\t<h1>Bienvenidos a \"EL\" supermercado</h1>\n");
       out.write("\t\t</div>\n");
-      out.write("\t\t<div class=\"panel-body\">\n");
-      out.write("\t\t\t<h2>Esta es la lista de nuestros productos</h2>\n");
-      out.write("\t\t\t<table>\n");
-      out.write("\t\t\t\t");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"panel-body\">\n");
+      out.write("\t\t<h2>Esta es la lista de nuestros productos</h2>\n");
+      out.write("\t\t<p>");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${cantiadProductos}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+      out.write("</p>\n");
+      out.write("\t\t<ul>\n");
+      out.write("\t\t\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("\t\t\t</table>\n");
+      out.write("\t\t</ul>\n");
+      out.write("\t\t<div class=\"panel panel-default\">\n");
+      out.write("\t\t<h2>Agregar descuento</h2>\t\t\n");
+      out.write("\t\t");
+      //  form:form
+      org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_005fform_005f0 = (org.springframework.web.servlet.tags.form.FormTag) _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.get(org.springframework.web.servlet.tags.form.FormTag.class);
+      _jspx_th_form_005fform_005f0.setPageContext(_jspx_page_context);
+      _jspx_th_form_005fform_005f0.setParent(null);
+      // /WEB-INF/jsp/productos.jsp(43,2) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_form_005fform_005f0.setAction("/agregarDescuento");
+      // /WEB-INF/jsp/productos.jsp(43,2) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_form_005fform_005f0.setMethod("POST");
+      // /WEB-INF/jsp/productos.jsp(43,2) name = modelAttribute type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_form_005fform_005f0.setModelAttribute("AltaDescuento");
+      // /WEB-INF/jsp/productos.jsp(43,2) name = commandName type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      _jspx_th_form_005fform_005f0.setCommandName("altaDescuento");
+      int[] _jspx_push_body_count_form_005fform_005f0 = new int[] { 0 };
+      try {
+        int _jspx_eval_form_005fform_005f0 = _jspx_th_form_005fform_005f0.doStartTag();
+        if (_jspx_eval_form_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+          do {
+            out.write("\n");
+            out.write("\t\t\t");
+            //  form:select
+            org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f0 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath.get(org.springframework.web.servlet.tags.form.SelectTag.class);
+            _jspx_th_form_005fselect_005f0.setPageContext(_jspx_page_context);
+            _jspx_th_form_005fselect_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
+            // /WEB-INF/jsp/productos.jsp(45,3) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+            _jspx_th_form_005fselect_005f0.setPath("tipo");
+            int[] _jspx_push_body_count_form_005fselect_005f0 = new int[] { 0 };
+            try {
+              int _jspx_eval_form_005fselect_005f0 = _jspx_th_form_005fselect_005f0.doStartTag();
+              if (_jspx_eval_form_005fselect_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                do {
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f0 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f0.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f0);
+                  // /WEB-INF/jsp/productos.jsp(46,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f0.setValue(new String("monto"));
+                  int[] _jspx_push_body_count_form_005foption_005f0 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f0 = _jspx_th_form_005foption_005f0.doStartTag();
+                    if (_jspx_eval_form_005foption_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f0[0]++;
+                        _jspx_th_form_005foption_005f0.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f0.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\tMonto\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f0.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f0 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f0[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f0[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f0.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f0.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f0);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f1 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f1.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f0);
+                  // /WEB-INF/jsp/productos.jsp(49,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f1.setValue(new String("porcentaje"));
+                  int[] _jspx_push_body_count_form_005foption_005f1 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f1 = _jspx_th_form_005foption_005f1.doStartTag();
+                    if (_jspx_eval_form_005foption_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f1[0]++;
+                        _jspx_th_form_005foption_005f1.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f1.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\tPorcentaje\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f1.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f1 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f1[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f1[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f1.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f1.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f1);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t");
+                  int evalDoAfterBody = _jspx_th_form_005fselect_005f0.doAfterBody();
+                  if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                    break;
+                } while (true);
+              }
+              if (_jspx_th_form_005fselect_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                return;
+              }
+            } catch (Throwable _jspx_exception) {
+              while (_jspx_push_body_count_form_005fselect_005f0[0]-- > 0)
+                out = _jspx_page_context.popBody();
+              _jspx_th_form_005fselect_005f0.doCatch(_jspx_exception);
+            } finally {
+              _jspx_th_form_005fselect_005f0.doFinally();
+              _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath.reuse(_jspx_th_form_005fselect_005f0);
+            }
+            out.write("\n");
+            out.write("\t\t\t");
+            //  form:select
+            org.springframework.web.servlet.tags.form.SelectTag _jspx_th_form_005fselect_005f1 = (org.springframework.web.servlet.tags.form.SelectTag) _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath.get(org.springframework.web.servlet.tags.form.SelectTag.class);
+            _jspx_th_form_005fselect_005f1.setPageContext(_jspx_page_context);
+            _jspx_th_form_005fselect_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
+            // /WEB-INF/jsp/productos.jsp(53,3) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+            _jspx_th_form_005fselect_005f1.setPath("monto");
+            int[] _jspx_push_body_count_form_005fselect_005f1 = new int[] { 0 };
+            try {
+              int _jspx_eval_form_005fselect_005f1 = _jspx_th_form_005fselect_005f1.doStartTag();
+              if (_jspx_eval_form_005fselect_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                do {
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f2 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f2.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f2.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(54,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f2.setValue(new String("monto"));
+                  int[] _jspx_push_body_count_form_005foption_005f2 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f2 = _jspx_th_form_005foption_005f2.doStartTag();
+                    if (_jspx_eval_form_005foption_005f2 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f2[0]++;
+                        _jspx_th_form_005foption_005f2.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f2.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t1\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f2.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f2 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f2[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f2[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f2.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f2.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f2);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f3 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f3.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f3.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(57,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f3.setValue(new String("porcentaje"));
+                  int[] _jspx_push_body_count_form_005foption_005f3 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f3 = _jspx_th_form_005foption_005f3.doStartTag();
+                    if (_jspx_eval_form_005foption_005f3 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f3[0]++;
+                        _jspx_th_form_005foption_005f3.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f3.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t2\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f3.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f3 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f3[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f3[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f3.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f3.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f3);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f4 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f4.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(60,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f4.setValue(new String("monto"));
+                  int[] _jspx_push_body_count_form_005foption_005f4 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f4 = _jspx_th_form_005foption_005f4.doStartTag();
+                    if (_jspx_eval_form_005foption_005f4 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f4 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f4[0]++;
+                        _jspx_th_form_005foption_005f4.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f4.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t3\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f4.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f4 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f4[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f4[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f4.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f4.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f4);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f5 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f5.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(63,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f5.setValue(new String("porcentaje"));
+                  int[] _jspx_push_body_count_form_005foption_005f5 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f5 = _jspx_th_form_005foption_005f5.doStartTag();
+                    if (_jspx_eval_form_005foption_005f5 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f5[0]++;
+                        _jspx_th_form_005foption_005f5.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f5.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t4\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f5.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f5 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f5[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f5[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f5.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f5.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f5);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f6 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f6.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f6.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(66,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f6.setValue(new String("monto"));
+                  int[] _jspx_push_body_count_form_005foption_005f6 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f6 = _jspx_th_form_005foption_005f6.doStartTag();
+                    if (_jspx_eval_form_005foption_005f6 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f6 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f6[0]++;
+                        _jspx_th_form_005foption_005f6.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f6.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t5\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f6.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f6 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f6[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f6.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f6[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f6.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f6.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f6);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f7 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f7.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f7.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(69,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f7.setValue(new String("porcentaje"));
+                  int[] _jspx_push_body_count_form_005foption_005f7 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f7 = _jspx_th_form_005foption_005f7.doStartTag();
+                    if (_jspx_eval_form_005foption_005f7 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f7 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f7[0]++;
+                        _jspx_th_form_005foption_005f7.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f7.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t6\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f7.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f7 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f7[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f7.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f7[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f7.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f7.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f7);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f8 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f8.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f8.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(72,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f8.setValue(new String("monto"));
+                  int[] _jspx_push_body_count_form_005foption_005f8 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f8 = _jspx_th_form_005foption_005f8.doStartTag();
+                    if (_jspx_eval_form_005foption_005f8 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f8 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f8[0]++;
+                        _jspx_th_form_005foption_005f8.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f8.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t7\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f8.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f8 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f8[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f8.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f8[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f8.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f8.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f8);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t\t");
+                  //  form:option
+                  org.springframework.web.servlet.tags.form.OptionTag _jspx_th_form_005foption_005f9 = (org.springframework.web.servlet.tags.form.OptionTag) _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.get(org.springframework.web.servlet.tags.form.OptionTag.class);
+                  _jspx_th_form_005foption_005f9.setPageContext(_jspx_page_context);
+                  _jspx_th_form_005foption_005f9.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fselect_005f1);
+                  // /WEB-INF/jsp/productos.jsp(75,4) name = value type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+                  _jspx_th_form_005foption_005f9.setValue(new String("porcentaje"));
+                  int[] _jspx_push_body_count_form_005foption_005f9 = new int[] { 0 };
+                  try {
+                    int _jspx_eval_form_005foption_005f9 = _jspx_th_form_005foption_005f9.doStartTag();
+                    if (_jspx_eval_form_005foption_005f9 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
+                      java.lang.Object value = null;
+                      java.lang.String displayValue = null;
+                      if (_jspx_eval_form_005foption_005f9 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.pushBody();
+                        _jspx_push_body_count_form_005foption_005f9[0]++;
+                        _jspx_th_form_005foption_005f9.setBodyContent((javax.servlet.jsp.tagext.BodyContent) out);
+                        _jspx_th_form_005foption_005f9.doInitBody();
+                      }
+                      value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                      displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                      do {
+                        out.write("\n");
+                        out.write("\t\t\t\t\t8\n");
+                        out.write("\t\t\t\t");
+                        int evalDoAfterBody = _jspx_th_form_005foption_005f9.doAfterBody();
+                        value = (java.lang.Object) _jspx_page_context.findAttribute("value");
+                        displayValue = (java.lang.String) _jspx_page_context.findAttribute("displayValue");
+                        if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                          break;
+                      } while (true);
+                      if (_jspx_eval_form_005foption_005f9 != javax.servlet.jsp.tagext.Tag.EVAL_BODY_INCLUDE) {
+                        out = _jspx_page_context.popBody();
+                        _jspx_push_body_count_form_005foption_005f9[0]--;
+                      }
+                    }
+                    if (_jspx_th_form_005foption_005f9.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                      return;
+                    }
+                  } catch (Throwable _jspx_exception) {
+                    while (_jspx_push_body_count_form_005foption_005f9[0]-- > 0)
+                      out = _jspx_page_context.popBody();
+                    _jspx_th_form_005foption_005f9.doCatch(_jspx_exception);
+                  } finally {
+                    _jspx_th_form_005foption_005f9.doFinally();
+                    _005fjspx_005ftagPool_005fform_005foption_0026_005fvalue.reuse(_jspx_th_form_005foption_005f9);
+                  }
+                  out.write("\n");
+                  out.write("\t\t\t");
+                  int evalDoAfterBody = _jspx_th_form_005fselect_005f1.doAfterBody();
+                  if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+                    break;
+                } while (true);
+              }
+              if (_jspx_th_form_005fselect_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+                return;
+              }
+            } catch (Throwable _jspx_exception) {
+              while (_jspx_push_body_count_form_005fselect_005f1[0]-- > 0)
+                out = _jspx_page_context.popBody();
+              _jspx_th_form_005fselect_005f1.doCatch(_jspx_exception);
+            } finally {
+              _jspx_th_form_005fselect_005f1.doFinally();
+              _005fjspx_005ftagPool_005fform_005fselect_0026_005fpath.reuse(_jspx_th_form_005fselect_005f1);
+            }
+            out.write("\n");
+            out.write("\t\t\t\n");
+            out.write("\t\t\t<button id=\"acceptButton\" title=\"+ Descuento\" type=\"submit\">\n");
+            out.write("\t\t\t\tenviar datos\n");
+            out.write("\t\t\t</button>\n");
+            out.write("\t\t");
+            int evalDoAfterBody = _jspx_th_form_005fform_005f0.doAfterBody();
+            if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
+              break;
+          } while (true);
+        }
+        if (_jspx_th_form_005fform_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+          return;
+        }
+      } catch (Throwable _jspx_exception) {
+        while (_jspx_push_body_count_form_005fform_005f0[0]-- > 0)
+          out = _jspx_page_context.popBody();
+        _jspx_th_form_005fform_005f0.doCatch(_jspx_exception);
+      } finally {
+        _jspx_th_form_005fform_005f0.doFinally();
+        _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.reuse(_jspx_th_form_005fform_005f0);
+      }
+      out.write("\n");
       out.write("\t\t</div>\n");
+      out.write("\t\t\n");
       out.write("\t</div>\n");
       out.write("</div>\n");
       out.write("\n");
@@ -131,7 +729,7 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f0.setParent(null);
-    // /WEB-INF/jsp/productos.jsp(8,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/productos.jsp(7,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f0.setValue("/js/jquery.js");
     int _jspx_eval_c_005furl_005f0 = _jspx_th_c_005furl_005f0.doStartTag();
     if (_jspx_th_c_005furl_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -150,7 +748,7 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f1.setParent(null);
-    // /WEB-INF/jsp/productos.jsp(9,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/productos.jsp(8,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f1.setValue("/js/bootstrap.js");
     int _jspx_eval_c_005furl_005f1 = _jspx_th_c_005furl_005f1.doStartTag();
     if (_jspx_th_c_005furl_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -169,7 +767,7 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f2.setParent(null);
-    // /WEB-INF/jsp/productos.jsp(10,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/productos.jsp(9,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f2.setValue("/css/bootstrap.css");
     int _jspx_eval_c_005furl_005f2 = _jspx_th_c_005furl_005f2.doStartTag();
     if (_jspx_th_c_005furl_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -188,8 +786,8 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f3.setParent(null);
-    // /WEB-INF/jsp/productos.jsp(11,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f3.setValue("/css/bootstrap-responsive.css");
+    // /WEB-INF/jsp/productos.jsp(10,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f3.setValue("/css/general.css");
     int _jspx_eval_c_005furl_005f3 = _jspx_th_c_005furl_005f3.doStartTag();
     if (_jspx_th_c_005furl_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);
@@ -207,9 +805,9 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/jsp/productos.jsp(29,4) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/productos.jsp(29,4) '${productos}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${productos}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/jsp/productos.jsp(29,4) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/productos.jsp(31,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/productos.jsp(31,3) '${productos}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${productos}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/productos.jsp(31,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("producto");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -217,16 +815,20 @@ public final class productos_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("\t\t\t\t    <tr>\n");
-          out.write("\t\t\t\t    \t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("</td>\n");
-          out.write("\t\t\t\t\t\t<td> - </td>\n");
-          out.write("\t\t\t\t    \t<td>");
-          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.precio}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-          out.write("</td>\n");
-          out.write("\t\t\t    \t</tr>\n");
-          out.write("\t\t\t\t");
+          out.write("\t\t\t    <li class=\"contenedor-cant\">\n");
+          out.write("\t\t\t    \t<p>\n");
+          out.write("\t\t\t    \t\t");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.key.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\n");
+          out.write("\t\t\t    \t    ");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.key.precio}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\n");
+          out.write("\t\t\t\t\t    <a class=\"btn btn-default btn-lg agregarProducto\" href=\"/supermercado/agregarACarrito/");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.key.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
+          out.write("\">+ Agregar</a>\n");
+          out.write("\t\t\t\t   </p>\n");
+          out.write("\t\t    \t</li>\n");
+          out.write("\t\t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

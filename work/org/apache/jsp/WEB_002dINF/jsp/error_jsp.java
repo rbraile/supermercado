@@ -1,14 +1,10 @@
-package org.apache.jsp;
+package org.apache.jsp.WEB_002dINF.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import tallerweb.supermercado.modelo.Carrito;
-import tallerweb.supermercado.modelo.Producto;
-import tallerweb.supermercado.modelo.Carrito;
-import java.util.LinkedList;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class error_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -48,7 +44,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
 
     try {
-      response.setContentType("text/html; charset=ISO-8859-1");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -58,10 +54,6 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out = pageContext.getOut();
       _jspx_out = out;
 
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -84,16 +76,33 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_c_005furl_005f3(_jspx_page_context))
         return;
       out.write("\" rel=\"stylesheet\"  type=\"text/css\" />\n");
-      out.write("<title>Ejemplo SpringMVC</title>\n");
+      out.write("<title>Agregar Stock</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      if (true) {
-        _jspx_page_context.forward("/productos");
-        return;
-      }
-      out.write(" \n");
+      out.write("<div class=\"container\">\n");
+      out.write("\t<div class=\"panel panel-default\">\n");
+      out.write("\t\t<div class=\"panel-header\">\n");
+      out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
+      out.write("\t\t\t\t  <li role=\"presentation\" class=\"active\"><a href=\"/supermercado\">Home</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
+      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
+      out.write(" \t\t\t  \t  <li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
+      out.write("\t\t\t</ul>\n");
+      out.write("\t\t\t<h1>Bienvenidos a \"EL\" supermercado</h1>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"panel-body\">\n");
+      out.write("\t\t<h2>Se ha producido un error</h2>\t\t\n");
+      out.write("\t</div>\n");
+      out.write("\t<a href=\"/supermercado\">Inicio</a>\n");
+      out.write("</div>\n");
       out.write("</body>\n");
-      out.write("</html>");
+      out.write("</html>\t\t\n");
+      out.write("\t\t\n");
+      out.write("\t\t\n");
+      out.write("\t\t\n");
+      out.write("\t\t");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
@@ -115,7 +124,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f0 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f0.setParent(null);
-    // /index.jsp(12,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/error.jsp(7,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f0.setValue("/js/jquery.js");
     int _jspx_eval_c_005furl_005f0 = _jspx_th_c_005furl_005f0.doStartTag();
     if (_jspx_th_c_005furl_005f0.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -134,7 +143,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f1 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f1.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f1.setParent(null);
-    // /index.jsp(13,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/error.jsp(8,13) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f1.setValue("/js/bootstrap.js");
     int _jspx_eval_c_005furl_005f1 = _jspx_th_c_005furl_005f1.doStartTag();
     if (_jspx_th_c_005furl_005f1.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -153,7 +162,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f2 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f2.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f2.setParent(null);
-    // /index.jsp(14,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/error.jsp(9,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005furl_005f2.setValue("/css/bootstrap.css");
     int _jspx_eval_c_005furl_005f2 = _jspx_th_c_005furl_005f2.doStartTag();
     if (_jspx_th_c_005furl_005f2.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
@@ -172,8 +181,8 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
     _jspx_th_c_005furl_005f3.setPageContext(_jspx_page_context);
     _jspx_th_c_005furl_005f3.setParent(null);
-    // /index.jsp(15,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
-    _jspx_th_c_005furl_005f3.setValue("/css/bootstrap-responsive.css");
+    // /WEB-INF/jsp/error.jsp(10,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f3.setValue("/css/general.css");
     int _jspx_eval_c_005furl_005f3 = _jspx_th_c_005furl_005f3.doStartTag();
     if (_jspx_th_c_005furl_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);

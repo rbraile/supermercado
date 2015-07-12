@@ -6,8 +6,8 @@
 <head>
 <script src="<c:url value="/js/jquery.js" />"></script>
 <script src="<c:url value="/js/bootstrap.js" />"></script>
-<link href="<c:url value="/css/bootstrap.css" />" rel="stylesheet"  type="text/css" />    
-<link href="<c:url value="/css/bootstrap-responsive.css" />" rel="stylesheet"  type="text/css" />
+<link href="<c:url value="/css/bootstrap.css" />" rel="stylesheet"  type="text/css" />
+<link href="<c:url value="/css/general.css" />" rel="stylesheet"  type="text/css" />
 <title>Agregar Stock</title>
 </head>
 <body>
@@ -16,10 +16,10 @@
 		<div class="panel-header">
 			<ul class="nav nav-pills">
 				  <li role="presentation"><a href="/supermercado">Home</a></li>
-				  <li role="presentation"><a href="agregarProducto">Agregar productos</a></li>
-				  <li role="presentation"><a href="stock">listar stock</a></li>
-				  <li role="presentation" class="active"><a href="agregarStock">Agregar stock</a></li>
-				  <li role="presentation"><a href="carrito">Carrito</a></li>
+				  <li role="presentation"><a href="/supermercado/agregarProducto">Agregar productos</a></li>
+				  <li role="presentation"><a href="/supermercado/stock">listar stock</a></li>
+				  <li role="presentation" class="active"><a href="/supermercado/agregarStock">Agregar stock</a></li>
+				  <li role="presentation"><a href="/supermercado/carrito">Carrito</a></li>
 			</ul>
 			<h1>Formulario para ingreso de stock de productos</h1>
 		</div>
@@ -27,13 +27,17 @@
 	<div class="panel">	
 		<form:form action="/agregarStockForm" method="POST" modelAttribute="AltaStockCommand" 
 		commandName="altaStockCommand">
-		
 			<form:label path="nombre">
-				Ingrese nombre del producto
+				seleccione nombre del producto
 			</form:label>
-			<form:input path="nombre"></form:input>
+			<form:select path="nombre">
+				<c:forEach items="${productos}" var="producto">
+		    		<form:option value="${producto.key.nombre}">
+		    			${producto.key.nombre}
+		    		</form:option>
+				</c:forEach>
+			</form:select>
 			<br />
-			
 			<form:label path="cantidad">
 				Ingrese cantidad
 			</form:label>
