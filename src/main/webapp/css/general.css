@@ -1,0 +1,33 @@
+/* estilos generales */
+
+.cantidad {
+	width: 48px;
+    padding: 10px 16px;
+}
+.agregarProducto {
+	font-size: 13px;
+}
+
+.descuento-numero {
+	width: 48px;
+}
+
+.panel {
+	padding: 20px;
+}
+
+.panel-header h3 {
+	margin-left: 15px;
+}
+
+.productos {
+	margin-top: 20px;
+}
+
+.productos .btn {
+	margin-left: 20px;	
+}
+
+.badge {
+	padding: 7px;
+}

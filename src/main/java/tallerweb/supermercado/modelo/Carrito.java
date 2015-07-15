@@ -16,7 +16,7 @@ public class Carrito {
 	public static Carrito getInstance() {
 		return instance;
 	}
-
+	
 	/**
 	 * Elimina todos los productos del carrito.<br>
 	 */
