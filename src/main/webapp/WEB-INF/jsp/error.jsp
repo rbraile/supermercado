@@ -12,15 +12,20 @@
 </head>
 <body>
 <div class="container">
+	<header>
+				<ul class="nav nav-pills">
+					  <li role="presentation" class="active"><a href="/supermercado">Home</a></li>
+					  <li role="presentation"><a href="/supermercado/agregarProducto">Agregar productos</a></li>
+					  <li role="presentation"><a href="/supermercado/stock">listar stock</a></li>
+					  <li role="presentation"><a href="/supermercado/agregarStock">Agregar stock</a></li>
+	 			  	  <li role="presentation"><a href="/supermercado/carrito">Carrito</a></li>
+				</ul>
+	</header>
+</div>
+<div class="container">
 	<div class="panel panel-default">
 		<div class="panel-header">
-			<ul class="nav nav-pills">
-				  <li role="presentation" class="active"><a href="/supermercado">Home</a></li>
-				  <li role="presentation"><a href="/supermercado/agregarProducto">Agregar productos</a></li>
-				  <li role="presentation"><a href="/supermercado/stock">listar stock</a></li>
-				  <li role="presentation"><a href="/supermercado/agregarStock">Agregar stock</a></li>
- 			  	  <li role="presentation"><a href="/supermercado/carrito">Carrito</a></li>
-			</ul>
+			
 			<h1>Bienvenidos a "EL" supermercado</h1>
 		</div>
 	</div>

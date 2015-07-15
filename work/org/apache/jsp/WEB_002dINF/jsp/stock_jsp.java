@@ -80,9 +80,8 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<title>Ejemplo SpringMVC</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
-      out.write("<div class=\"container\">\n");
-      out.write("\t<div class=\"panel panel-default\">\n");
-      out.write("\t\t<div class=\"panel-header\">\n");
+      out.write("  <div class=\"container\">\n");
+      out.write("\t  <header>\n");
       out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
       out.write(" \t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
       out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
@@ -91,11 +90,12 @@ public final class stock_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
       out.write("\t\t\t</ul>\n");
       out.write("\t\t\t<h1>Listado de productos y su stock</h1>\n");
-      out.write("\t\t</div>\n");
-      out.write("\t\t</div>\n");
+      out.write("\t\t</header>\n");
+      out.write("\t</div>\n");
+      out.write("\t<div class=\"container\">\n");
       out.write("\t\t<div class=\"panel-body\">\n");
       out.write("\t\t\t<h2>Esta es la lista de nuestros productos</h2>\n");
-      out.write("\t\t\t<table>\n");
+      out.write("\t\t\t<table class=\"table table-striped\">\n");
       out.write("\t\t\t\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
         return;

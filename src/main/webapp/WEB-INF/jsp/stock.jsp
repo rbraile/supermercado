@@ -11,9 +11,8 @@
 <title>Ejemplo SpringMVC</title>
 </head>
 <body>
-<div class="container">
-	<div class="panel panel-default">
-		<div class="panel-header">
+  <div class="container">
+	  <header>
 			<ul class="nav nav-pills">
  				  <li role="presentation"><a href="/supermercado">Home</a></li>
 				  <li role="presentation"><a href="/supermercado/agregarProducto">Agregar productos</a></li>
@@ -22,11 +21,12 @@
 				  <li role="presentation"><a href="/supermercado/carrito">Carrito</a></li>
 			</ul>
 			<h1>Listado de productos y su stock</h1>
-		</div>
-		</div>
+		</header>
+	</div>
+	<div class="container">
 		<div class="panel-body">
 			<h2>Esta es la lista de nuestros productos</h2>
-			<table>
+			<table class="table table-striped">
 				<c:forEach items="${stocks}" var="stock">
 				    <tr>
 				    	<td>${stock.key.nombre}</td>

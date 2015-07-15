@@ -81,44 +81,61 @@ public final class carrito_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("<div class=\"container\">\n");
-      out.write("\t<div class=\"panel panel-default\">\n");
-      out.write("\t\t<div class=\"panel-header\">\n");
-      out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
-      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
-      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
-      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
-      out.write("\t\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
-      out.write("\t\t\t\t  <li role=\"presentation\" class=\"active\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
-      out.write("\t\t\t</ul>\n");
-      out.write("\t\t\t<h1>Bienvenidos a \"EL\" supermercado</h1>\n");
-      out.write("\t\t</div>\n");
-      out.write("\t</div>\n");
-      out.write("\t<div class=\"panel-body\">\n");
-      out.write("\t\t<h2>Esta es la lista de nuestros productos</h2>\n");
-      out.write("\t\t<table>\n");
-      out.write("\t\t\t");
+      out.write("\t<header>\n");
+      out.write("\t\t<ul class=\"nav nav-pills\">\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\" class=\"active\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
+      out.write("\t\t</ul>\n");
+      out.write("\t</header>\n");
+      out.write("</div>\n");
+      out.write("<div class=\"container\">\n");
+      out.write("\t<h1>Bienvenidos a \"EL\" supermercado</h1>\n");
+      out.write("\t<div class=\"row\">\n");
+      out.write("\t\t<div class=\"col-md-6\">\n");
+      out.write("\t\t\t<div class=\"panel panel-default\">\n");
+      out.write("\t\t\t<div class=\"panel-header\"><h3>Tu carrito:</h3></div>\t\n");
+      out.write("\t\t\t\t<div class=\"panel-body\">\n");
+      out.write("\t\t\t\t\t<table class=\"table table-striped\">\n");
+      out.write("\t\t\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t\t<th>Producto</th>\n");
+      out.write("\t\t\t\t\t\t<th>Cantidad</th>\n");
+      out.write("\t\t\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t\t\t");
       if (_jspx_meth_c_005fforEach_005f0(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("\t\t</table>\n");
-      out.write("\t\t<p>total sin  descuentos $ ");
+      out.write("\t\t\t\t\t</table>\n");
+      out.write("\t\t\t\t</div>\t\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t\t<div class=\"col-md-6\">\n");
+      out.write("\t\t\t<table class=\"table table-striped\">\n");
+      out.write("\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t<th>Total sin  descuentos</th>\n");
+      out.write("\t\t\t\t\t<th>Total de descuentos</th>\n");
+      out.write("\t\t\t\t\t<th>Total con descuentos</th>\n");
+      out.write("\t\t\t\t</tr>\n");
+      out.write("\t\t\t\t<tr>\n");
+      out.write("\t\t\t\t\t<td>$ ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${total}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</p>\n");
-      out.write("\t\t<p>--------------------------------</p>\n");
-      out.write("\t\t<p>total de descuentos $ ");
+      out.write("</td>\n");
+      out.write("\t\t\t\t\t<td>$ ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${totalDescuentos}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</p>\n");
-      out.write("\t\t<p>--------------------------------</p>\n");
-      out.write("\t\t<p>total de con descuentos $ ");
+      out.write("</td>\n");
+      out.write("\t\t\t\t\t<td>$ ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${totaConlDescuentos}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
-      out.write("</p>\n");
-      out.write("\t\t<div>\n");
-      out.write("\t\t\t<a class=\"btn\" href=\"/supermercado/cancelar\">Cancelar</a>\n");
+      out.write("</td>\n");
+      out.write("\t\t\t\t</tr>\n");
+      out.write("\t\t\t</table>\n");
+      out.write("\t\t\t<div>\n");
+      out.write("\t\t\t\t<a class=\"btn\" href=\"/supermercado/cancelar\">Cancelar</a>\n");
+      out.write("\t\t\t</div>\n");
       out.write("\t\t</div>\n");
       out.write("\t</div>\n");
       out.write("</div>\n");
-      out.write("\n");
-      out.write("\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -199,9 +216,9 @@ public final class carrito_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ForEachTag _jspx_th_c_005fforEach_005f0 = (org.apache.taglibs.standard.tag.rt.core.ForEachTag) _005fjspx_005ftagPool_005fc_005fforEach_0026_005fvar_005fitems.get(org.apache.taglibs.standard.tag.rt.core.ForEachTag.class);
     _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
     _jspx_th_c_005fforEach_005f0.setParent(null);
-    // /WEB-INF/jsp/carrito.jsp(30,3) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/carrito.jsp(30,3) '${productos}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${productos}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-    // /WEB-INF/jsp/carrito.jsp(30,3) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/carrito.jsp(37,6) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+    _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/WEB-INF/jsp/carrito.jsp(37,6) '${productos}'",_el_expressionfactory.createValueExpression(_jspx_page_context.getELContext(),"${productos}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+    // /WEB-INF/jsp/carrito.jsp(37,6) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_c_005fforEach_005f0.setVar("producto");
     int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
     try {
@@ -209,15 +226,15 @@ public final class carrito_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("\t\t\t    <tr>\n");
-          out.write("\t\t\t    \t<td>");
+          out.write("\t\t\t\t\t\t   \t <tr>\n");
+          out.write("\t\t\t\t\t\t    \t<td>");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\n");
-          out.write("\t\t\t    \t<td> $ ");
+          out.write("\t\t\t\t\t\t    \t<td> $ ");
           out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${producto.precio}", java.lang.String.class, (PageContext)_jspx_page_context, null, false));
           out.write("</td>\t\t\t\t\t\n");
-          out.write("\t\t    \t</tr>\n");
-          out.write("\t\t\t");
+          out.write("\t\t\t\t\t    \t</tr>\n");
+          out.write("\t\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;

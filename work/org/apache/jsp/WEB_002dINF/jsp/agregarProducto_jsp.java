@@ -12,9 +12,10 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
   private static java.util.List _jspx_dependants;
 
   private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath;
-  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fid_005fcommandName_005faction;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fmin_005fclass_005fnobody;
+  private org.apache.jasper.runtime.TagHandlerPool _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005fpath_005fmin_005fclass_005fnobody;
 
   private javax.el.ExpressionFactory _el_expressionfactory;
   private org.apache.AnnotationProcessor _jsp_annotationprocessor;
@@ -25,18 +26,20 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
 
   public void _jspInit() {
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
-    _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fid_005fcommandName_005faction = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fmin_005fclass_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
+    _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005fpath_005fmin_005fclass_005fnobody = org.apache.jasper.runtime.TagHandlerPool.getTagHandlerPool(getServletConfig());
     _el_expressionfactory = _jspxFactory.getJspApplicationContext(getServletConfig().getServletContext()).getExpressionFactory();
     _jsp_annotationprocessor = (org.apache.AnnotationProcessor) getServletConfig().getServletContext().getAttribute(org.apache.AnnotationProcessor.class.getName());
   }
 
   public void _jspDestroy() {
     _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.release();
-    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.release();
-    _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.release();
-    _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody.release();
+    _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fid_005fcommandName_005faction.release();
+    _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass.release();
+    _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fmin_005fclass_005fnobody.release();
+    _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005fpath_005fmin_005fclass_005fnobody.release();
   }
 
   public void _jspService(HttpServletRequest request, HttpServletResponse response)
@@ -80,30 +83,46 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("<link href=\"");
       if (_jspx_meth_c_005furl_005f2(_jspx_page_context))
         return;
+      out.write("\" rel=\"stylesheet\"  type=\"text/css\" />\n");
+      out.write("<link href=\"");
+      if (_jspx_meth_c_005furl_005f3(_jspx_page_context))
+        return;
       out.write("\" rel=\"stylesheet\"  type=\"text/css\" />    \n");
       out.write("<title>Agregar Producto</title>\n");
       out.write("</head>\n");
       out.write("<body>\n");
       out.write("<div class=\"container\">\n");
-      out.write("\t<div class=\"panel panel-default\">\n");
-      out.write("\t\t<div class=\"panel-header\">\n");
-      out.write("\t\t\t<ul class=\"nav nav-pills\">\n");
-      out.write("\t\t\t  <li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
-      out.write("\t\t\t  <li role=\"presentation\" class=\"active\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
-      out.write("\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
-      out.write("\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
-      out.write("\t\t\t  <li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
-      out.write("\t\t\t</ul>\n");
-      out.write("\t\t\t<h1>Agregado de productos</h1>\n");
-      out.write("\t\t</div>\n");
-      out.write("\t</div>\n");
-      out.write("\t<h1>Formulario para ingreso de productos</h1>\n");
-      out.write("\t");
+      out.write("\t<header>\n");
+      out.write("\t\t<ul class=\"nav nav-pills\">\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado\">Home</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\" class=\"active\"><a href=\"/supermercado/agregarProducto\">Agregar productos</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/stock\">listar stock</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/agregarStock\">Agregar stock</a></li>\n");
+      out.write("\t\t\t<li role=\"presentation\"><a href=\"/supermercado/carrito\">Carrito</a></li>\n");
+      out.write("\t\t</ul>\n");
+      out.write("\t\t<h1 class=\"titulo\">Agregado de productos</h1>\n");
+      out.write("\t</header>\n");
+      out.write("</div>\n");
+      out.write("<div class=\"container\">\n");
+      out.write("\t<div class=\"row\">\n");
+      out.write("\t\t<div class=\"col-md-6\">\n");
+      out.write("\t\t\t<div class=\"panel panel-default agregar-producto\">\n");
+      out.write("\t\t\t\t<div class=\"panel-header\">\n");
+      out.write("\t\t\t\t\t<h3>Formulario para ingreso de productos</h3>\n");
+      out.write("                    <div class=\"hide error alert alert-danger\" role=\"alert\">\n");
+      out.write("                        <p>Este usuario no existe o no tiene hogar relacionado verifique sus datos</p>\n");
+      out.write("                    </div>\n");
+      out.write("\t\t\t\t</div>\t\n");
+      out.write("\t\t\t\t<div class=\"panel-body\">\n");
+      out.write("\t\t\t\t\t");
       if (_jspx_meth_form_005fform_005f0(_jspx_page_context))
         return;
       out.write("\t\n");
-      out.write("</div>\n");
-      out.write("\n");
+      out.write("\t\t\t\t</div>\n");
+      out.write("\t\t\t</div>\n");
+      out.write("\t\t</div>\n");
+      out.write("\t</div>\n");
+      out.write("</div>\t\n");
       out.write("</body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -176,55 +195,73 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
     return false;
   }
 
+  private boolean _jspx_meth_c_005furl_005f3(PageContext _jspx_page_context)
+          throws Throwable {
+    PageContext pageContext = _jspx_page_context;
+    JspWriter out = _jspx_page_context.getOut();
+    //  c:url
+    org.apache.taglibs.standard.tag.rt.core.UrlTag _jspx_th_c_005furl_005f3 = (org.apache.taglibs.standard.tag.rt.core.UrlTag) _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.get(org.apache.taglibs.standard.tag.rt.core.UrlTag.class);
+    _jspx_th_c_005furl_005f3.setPageContext(_jspx_page_context);
+    _jspx_th_c_005furl_005f3.setParent(null);
+    // /WEB-INF/jsp/agregarProducto.jsp(10,12) name = value type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_c_005furl_005f3.setValue("/css/general.css");
+    int _jspx_eval_c_005furl_005f3 = _jspx_th_c_005furl_005f3.doStartTag();
+    if (_jspx_th_c_005furl_005f3.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
+      _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);
+      return true;
+    }
+    _005fjspx_005ftagPool_005fc_005furl_0026_005fvalue_005fnobody.reuse(_jspx_th_c_005furl_005f3);
+    return false;
+  }
+
   private boolean _jspx_meth_form_005fform_005f0(PageContext _jspx_page_context)
           throws Throwable {
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:form
-    org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_005fform_005f0 = (org.springframework.web.servlet.tags.form.FormTag) _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.get(org.springframework.web.servlet.tags.form.FormTag.class);
+    org.springframework.web.servlet.tags.form.FormTag _jspx_th_form_005fform_005f0 = (org.springframework.web.servlet.tags.form.FormTag) _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fid_005fcommandName_005faction.get(org.springframework.web.servlet.tags.form.FormTag.class);
     _jspx_th_form_005fform_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005fform_005f0.setParent(null);
-    // /WEB-INF/jsp/agregarProducto.jsp(27,1) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(37,5) name = id type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    _jspx_th_form_005fform_005f0.setId("agregarp");
+    // /WEB-INF/jsp/agregarProducto.jsp(37,5) name = action type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setAction("/agregar");
-    // /WEB-INF/jsp/agregarProducto.jsp(27,1) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(37,5) name = method type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setMethod("POST");
-    // /WEB-INF/jsp/agregarProducto.jsp(27,1) name = modelAttribute type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(37,5) name = modelAttribute type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setModelAttribute("AltaProducto");
-    // /WEB-INF/jsp/agregarProducto.jsp(27,1) name = commandName type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(37,5) name = commandName type = null reqTime = true required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005fform_005f0.setCommandName("altaProducto");
     int[] _jspx_push_body_count_form_005fform_005f0 = new int[] { 0 };
     try {
       int _jspx_eval_form_005fform_005f0 = _jspx_th_form_005fform_005f0.doStartTag();
       if (_jspx_eval_form_005fform_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
-          out.write('\n');
-          out.write('	');
-          out.write('	');
+          out.write("\n");
+          out.write("\t\t\t\t\t\t");
           if (_jspx_meth_form_005flabel_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
-          out.write('\n');
-          out.write('	');
-          out.write('	');
+          out.write("\n");
+          out.write("\t\t\t\t\t\t");
           if (_jspx_meth_form_005finput_005f0(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
           out.write("\n");
-          out.write("\t\t<br />\n");
-          out.write("\t\t\n");
-          out.write("\t\t");
+          out.write("\t\t\t\t\t\t<br />\n");
+          out.write("\t\t\t\t\t\t\n");
+          out.write("\t\t\t\t\t\t");
           if (_jspx_meth_form_005flabel_005f1(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
-          out.write('\n');
-          out.write('	');
-          out.write('	');
+          out.write("\n");
+          out.write("\t\t\t\t\t\t");
           if (_jspx_meth_form_005finput_005f1(_jspx_th_form_005fform_005f0, _jspx_page_context, _jspx_push_body_count_form_005fform_005f0))
             return true;
           out.write("\n");
-          out.write("\t\t<br />\n");
-          out.write("\t\t\t\n");
-          out.write("\t\t<button id=\"acceptButton\" title=\"enviar\" type=\"submit\">\n");
-          out.write("\t\t\tenviar datos\n");
-          out.write("\t\t</button>\n");
-          out.write("\t");
+          out.write("\t\t\t\t\t\t<br />\n");
+          out.write("\t\t\t\t\t\t\t\n");
+          out.write("\t\t\t\t\t\t<button id=\"acceptButton\" title=\"enviar\" type=\"submit\" disabled>\n");
+          out.write("\t\t\t\t\t\t\tenviar datos\n");
+          out.write("\t\t\t\t\t\t</button>\n");
+          out.write("\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_form_005fform_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -239,7 +276,7 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_th_form_005fform_005f0.doCatch(_jspx_exception);
     } finally {
       _jspx_th_form_005fform_005f0.doFinally();
-      _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fcommandName_005faction.reuse(_jspx_th_form_005fform_005f0);
+      _005fjspx_005ftagPool_005fform_005fform_0026_005fmodelAttribute_005fmethod_005fid_005fcommandName_005faction.reuse(_jspx_th_form_005fform_005f0);
     }
     return false;
   }
@@ -249,19 +286,21 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:label
-    org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f0 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
+    org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f0 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/jsp/agregarProducto.jsp(28,2) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(38,6) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f0.setPath("nombre");
+    // /WEB-INF/jsp/agregarProducto.jsp(38,6) null
+    _jspx_th_form_005flabel_005f0.setDynamicAttribute(null, "class", new String("form-label"));
     int[] _jspx_push_body_count_form_005flabel_005f0 = new int[] { 0 };
     try {
       int _jspx_eval_form_005flabel_005f0 = _jspx_th_form_005flabel_005f0.doStartTag();
       if (_jspx_eval_form_005flabel_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("\t\t\tIngrese nombre\n");
-          out.write("\t\t");
+          out.write("\t\t\t\t\t\t\tIngrese nombre\n");
+          out.write("\t\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_form_005flabel_005f0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -276,7 +315,7 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_th_form_005flabel_005f0.doCatch(_jspx_exception);
     } finally {
       _jspx_th_form_005flabel_005f0.doFinally();
-      _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.reuse(_jspx_th_form_005flabel_005f0);
+      _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass.reuse(_jspx_th_form_005flabel_005f0);
     }
     return false;
   }
@@ -286,11 +325,15 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:input
-    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f0 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
+    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f0 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fmin_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f0.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f0.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/jsp/agregarProducto.jsp(31,2) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(41,6) null
+    _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "min", new String("2"));
+    // /WEB-INF/jsp/agregarProducto.jsp(41,6) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f0.setPath("nombre");
+    // /WEB-INF/jsp/agregarProducto.jsp(41,6) null
+    _jspx_th_form_005finput_005f0.setDynamicAttribute(null, "class", new String("form-control"));
     int[] _jspx_push_body_count_form_005finput_005f0 = new int[] { 0 };
     try {
       int _jspx_eval_form_005finput_005f0 = _jspx_th_form_005finput_005f0.doStartTag();
@@ -303,7 +346,7 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_th_form_005finput_005f0.doCatch(_jspx_exception);
     } finally {
       _jspx_th_form_005finput_005f0.doFinally();
-      _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody.reuse(_jspx_th_form_005finput_005f0);
+      _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fmin_005fclass_005fnobody.reuse(_jspx_th_form_005finput_005f0);
     }
     return false;
   }
@@ -313,19 +356,21 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:label
-    org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f1 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.get(org.springframework.web.servlet.tags.form.LabelTag.class);
+    org.springframework.web.servlet.tags.form.LabelTag _jspx_th_form_005flabel_005f1 = (org.springframework.web.servlet.tags.form.LabelTag) _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass.get(org.springframework.web.servlet.tags.form.LabelTag.class);
     _jspx_th_form_005flabel_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005flabel_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/jsp/agregarProducto.jsp(34,2) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(44,6) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005flabel_005f1.setPath("precio");
+    // /WEB-INF/jsp/agregarProducto.jsp(44,6) null
+    _jspx_th_form_005flabel_005f1.setDynamicAttribute(null, "class", new String("form-label"));
     int[] _jspx_push_body_count_form_005flabel_005f1 = new int[] { 0 };
     try {
       int _jspx_eval_form_005flabel_005f1 = _jspx_th_form_005flabel_005f1.doStartTag();
       if (_jspx_eval_form_005flabel_005f1 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
         do {
           out.write("\n");
-          out.write("\t\t\tIngrese precio\n");
-          out.write("\t\t");
+          out.write("\t\t\t\t\t\t\tIngrese precio\n");
+          out.write("\t\t\t\t\t\t");
           int evalDoAfterBody = _jspx_th_form_005flabel_005f1.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
             break;
@@ -340,7 +385,7 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_th_form_005flabel_005f1.doCatch(_jspx_exception);
     } finally {
       _jspx_th_form_005flabel_005f1.doFinally();
-      _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath.reuse(_jspx_th_form_005flabel_005f1);
+      _005fjspx_005ftagPool_005fform_005flabel_0026_005fpath_005fclass.reuse(_jspx_th_form_005flabel_005f1);
     }
     return false;
   }
@@ -350,11 +395,17 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
     PageContext pageContext = _jspx_page_context;
     JspWriter out = _jspx_page_context.getOut();
     //  form:input
-    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f1 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
+    org.springframework.web.servlet.tags.form.InputTag _jspx_th_form_005finput_005f1 = (org.springframework.web.servlet.tags.form.InputTag) _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005fpath_005fmin_005fclass_005fnobody.get(org.springframework.web.servlet.tags.form.InputTag.class);
     _jspx_th_form_005finput_005f1.setPageContext(_jspx_page_context);
     _jspx_th_form_005finput_005f1.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_form_005fform_005f0);
-    // /WEB-INF/jsp/agregarProducto.jsp(37,2) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+    // /WEB-INF/jsp/agregarProducto.jsp(47,6) null
+    _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "min", new String("1"));
+    // /WEB-INF/jsp/agregarProducto.jsp(47,6) null
+    _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "type", new String("number"));
+    // /WEB-INF/jsp/agregarProducto.jsp(47,6) name = path type = null reqTime = true required = true fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
     _jspx_th_form_005finput_005f1.setPath("precio");
+    // /WEB-INF/jsp/agregarProducto.jsp(47,6) null
+    _jspx_th_form_005finput_005f1.setDynamicAttribute(null, "class", new String("form-control"));
     int[] _jspx_push_body_count_form_005finput_005f1 = new int[] { 0 };
     try {
       int _jspx_eval_form_005finput_005f1 = _jspx_th_form_005finput_005f1.doStartTag();
@@ -367,7 +418,7 @@ public final class agregarProducto_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_th_form_005finput_005f1.doCatch(_jspx_exception);
     } finally {
       _jspx_th_form_005finput_005f1.doFinally();
-      _005fjspx_005ftagPool_005fform_005finput_0026_005fpath_005fnobody.reuse(_jspx_th_form_005finput_005f1);
+      _005fjspx_005ftagPool_005fform_005finput_0026_005ftype_005fpath_005fmin_005fclass_005fnobody.reuse(_jspx_th_form_005finput_005f1);
     }
     return false;
   }

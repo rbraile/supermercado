@@ -99,7 +99,9 @@ public class inicioController {
 		miVista.addAllObjects(miMapa);
 		miVista.addObject("productos", stocks);
 
-		miVista.addObject("cantiadProductos", carrito.verProductos().size());
+		miVista.addObject("total",carrito.totalSinDescuentos());
+		miVista.addObject("totalDescuentos",carrito.totalAhorros());
+		miVista.addObject("totaConlDescuentos",carrito.total());
 		miVista.addObject("cantiadProductos", carrito.verProductos().size());
 		miVista.setViewName("productos");
 		return miVista;
